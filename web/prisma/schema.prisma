@@ -1,0 +1,186 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           String    @id @default(cuid()) @db.VarChar(32)
+  email        String    @unique @db.VarChar(255)
+  passwordHash String    @db.VarChar(60)
+  name         String?   @db.VarChar(255)
+  dateOfBirth  DateTime? // Optional, used to derive age for dependents/care access
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  sessions           Session[]
+  medications        Medication[]
+  scheduleEntries    ScheduleEntry[]
+  schedules          Schedule[]
+  dayStatuses        DayStatus[]
+  ownedShareLinks    ShareLink[]   @relation("ShareLinkOwner")
+  viewerShareLinks   ShareLink[]   @relation("ShareLinkViewer")
+  careAccessesOwner  CareAccess[]  @relation("CareAccessOwner")
+  careAccessesViewer CareAccess[]  @relation("CareAccessViewer")
+}
+
+model Session {
+  id        String   @id @default(cuid()) @db.VarChar(32)
+  userId    String   @db.VarChar(32)
+  tokenHash String   @unique @db.VarChar(64)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+model Medication {
+  id                   String    @id @default(cuid()) @db.VarChar(32)
+  userId               String    @db.VarChar(32)
+  name                 String    @db.VarChar(150)
+  dose                 Int?                     // <= робимо необов'язковим
+  form                 String?   @db.VarChar(50) // <= теж необов'язкове
+  deletedAt            DateTime?
+  previousMedicationId String?   @db.VarChar(32) // Version linking for edit flow
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+
+  user               User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  previousMedication Medication?     @relation("MedicationVersions", fields: [previousMedicationId], references: [id], onDelete: SetNull)
+  nextVersions       Medication[]    @relation("MedicationVersions")
+  scheduleEntries    ScheduleEntry[]
+  schedules          Schedule[]
+
+  @@index([userId])
+  @@index([userId, deletedAt])
+  @@index([previousMedicationId])
+}
+
+enum ScheduleStatus {
+  PLANNED
+  DONE
+}
+
+enum DayStatusType {
+  NONE
+  SCHEDULED
+  ALL_TAKEN
+  PARTIAL
+  MISSED
+}
+
+model Schedule {
+  id            String    @id @default(cuid()) @db.VarChar(32)
+  medicationId  String    @db.VarChar(32)
+  userId        String    @db.VarChar(32)
+  /// Quantity per dose (allows fractional values like 0.5)
+  quantity      Decimal   @default(1) @db.Decimal(6, 2)
+  units         String    @default("pill") @db.VarChar(50)
+  frequencyDays Json
+  durationDays  Int
+  dateStart     DateTime
+  dateEnd       DateTime?
+  timeOfDay     Json
+  mealTiming    String    @default("anytime") @db.VarChar(20)
+  deletedAt     DateTime? // Soft delete for edit/delete flow
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  medication      Medication      @relation(fields: [medicationId], references: [id], onDelete: Cascade)
+  scheduleEntries ScheduleEntry[]
+
+  @@index([userId])
+  @@index([medicationId])
+  @@index([dateStart])
+  @@index([userId, deletedAt])
+}
+
+model ScheduleEntry {
+  id           String         @id @default(cuid()) @db.VarChar(32)
+  scheduleId   String?        @db.VarChar(32)
+  medicationId String?        @db.VarChar(32)
+  userId       String         @db.VarChar(32)
+  dateTime     DateTime
+  status       ScheduleStatus @default(PLANNED)
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+
+  schedule   Schedule?   @relation(fields: [scheduleId], references: [id], onDelete: Cascade)
+  medication Medication? @relation(fields: [medicationId], references: [id], onDelete: SetNull)
+  user       User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([medicationId, dateTime])
+  @@index([userId, dateTime])
+  @@index([scheduleId, dateTime])
+}
+
+model DayStatus {
+  id           String        @id @default(cuid()) @db.VarChar(32)
+  userId       String        @db.VarChar(32)
+  date         DateTime      @db.Date
+  status       DayStatusType
+  totalCount   Int           @default(0)
+  plannedCount Int           @default(0)
+  takenCount   Int           @default(0)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, date])
+  @@index([userId, date])
+  @@index([userId, status])
+}
+
+enum ShareLinkStatus {
+  active
+  revoked
+  expired
+}
+
+model ShareLink {
+  id        String          @id @default(cuid()) @db.VarChar(32)
+  token     String          @unique @db.VarChar(64)
+  ownerId   String          @db.VarChar(32)
+  viewerId  String?         @db.VarChar(32)
+  expiresAt DateTime
+  status    ShareLinkStatus @default(active)
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+
+  owner  User  @relation("ShareLinkOwner", fields: [ownerId], references: [id], onDelete: Cascade)
+  viewer User? @relation("ShareLinkViewer", fields: [viewerId], references: [id], onDelete: SetNull)
+
+  @@index([token])
+  @@index([ownerId])
+  @@index([status, expiresAt])
+}
+
+model CareAccess {
+  id        String   @id @default(cuid()) @db.VarChar(32)
+  ownerId   String   @db.VarChar(32)
+  viewerId  String   @db.VarChar(32)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  owner  User @relation("CareAccessOwner", fields: [ownerId], references: [id], onDelete: Cascade)
+  viewer User @relation("CareAccessViewer", fields: [viewerId], references: [id], onDelete: Cascade)
+
+  @@unique([ownerId, viewerId])
+  @@index([ownerId])
+  @@index([viewerId])
+}

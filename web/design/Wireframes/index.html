@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prescription Clarity - Design System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2196F3",
+              secondary: "#FB923C",
+              doctor: "#9333EA",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 border-b border-gray-200 bg-white">
+      <div class="mx-auto max-w-7xl px-6 py-4">
+        <div class="flex items-center gap-4">
+          <img
+            src="logo.svg"
+            alt="Prescription Clarity Logo"
+            class="h-12 w-12"
+          />
+          <div>
+            <h1 class="text-2xl font-bold text-gray-900">
+              Prescription Clarity
+            </h1>
+            <p class="text-sm text-gray-600">Design System & UI Kit</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-[73px] z-40 border-b border-gray-200 bg-white">
+      <div class="mx-auto max-w-7xl px-6">
+        <ul class="flex gap-6 overflow-x-auto">
+          <li>
+            <a
+              href="#overview"
+              class="text-primary border-primary block border-b-2 py-4 font-semibold"
+              >Overview</a
+            >
+          </li>
+          <li>
+            <a
+              href="01-colors-typography.html"
+              class="hover:text-primary block py-4 text-gray-600"
+              >Colors & Typography</a
+            >
+          </li>
+          <li>
+            <a
+              href="02-components.html"
+              class="hover:text-primary block py-4 text-gray-600"
+              >UI Components</a
+            >
+          </li>
+          <li>
+            <a
+              href="03-calendar.html"
+              class="hover:text-primary block py-4 text-gray-600"
+              >Calendar</a
+            >
+          </li>
+          <li>
+            <a
+              href="04-forms.html"
+              class="hover:text-primary block py-4 text-gray-600"
+              >Forms</a
+            >
+          </li>
+          <li>
+            <a
+              href="05-print-pdf.html"
+              class="hover:text-primary block py-4 text-gray-600"
+              >Print/PDF</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="mx-auto max-w-7xl px-6 py-12">
+      <!-- Hero Section -->
+      <section id="overview" class="mb-16">
+        <div class="mb-12 text-center">
+          <img
+            src="logo.svg"
+            alt="Prescription Clarity"
+            class="mx-auto mb-6 h-24 w-24"
+          />
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">
+            Prescription Clarity Design System
+          </h2>
+          <p class="mx-auto max-w-3xl text-xl text-gray-600">
+            A comprehensive design system for universal health tracking
+            platform. Built for elderly users with accessibility and clarity as
+            top priorities.
+          </p>
+        </div>
+
+        <!-- Key Principles -->
+        <div class="mb-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+            <div
+              class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100"
+            >
+              <svg
+                class="text-primary h-8 w-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                />
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-bold">Accessibility First</h3>
+            <p class="text-gray-600">
+              WCAG AAA compliant with minimum 56px touch targets, 18px base
+              font, and 7:1 contrast ratio.
+            </p>
+          </div>
+
+          <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+            <div
+              class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100"
+            >
+              <svg
+                class="h-8 w-8 text-green-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-bold">Medical Grade</h3>
+            <p class="text-gray-600">
+              HIPAA & GDPR compliant design patterns with audit trails, data
+              encryption, and role-based access.
+            </p>
+          </div>
+
+          <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+            <div
+              class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-purple-100"
+            >
+              <svg
+                class="h-8 w-8 text-purple-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-bold">Fully Responsive</h3>
+            <p class="text-gray-600">
+              Optimized for all devices from 320px to 2560px with progressive
+              enhancement.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Design Tokens -->
+      <section class="mb-16">
+        <h3 class="mb-8 text-3xl font-bold">Design Tokens</h3>
+
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <!-- Colors -->
+          <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+            <h4 class="mb-6 text-xl font-bold">Primary Colors</h4>
+            <div class="space-y-4">
+              <div class="flex items-center gap-4">
+                <div
+                  class="h-20 w-20 rounded-lg border-2 border-gray-200 bg-[#2196F3]"
+                ></div>
+                <div>
+                  <p class="text-lg font-bold">Primary Blue</p>
+                  <p class="font-mono text-gray-600">#2196F3</p>
+                  <p class="text-sm text-gray-500">
+                    Patient role, main actions
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="h-20 w-20 rounded-lg border-2 border-gray-200 bg-[#FB923C]"
+                ></div>
+                <div>
+                  <p class="text-lg font-bold">Secondary Orange</p>
+                  <p class="font-mono text-gray-600">#FB923C</p>
+                  <p class="text-sm text-gray-500">Caregiver role</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="h-20 w-20 rounded-lg border-2 border-gray-200 bg-[#9333EA]"
+                ></div>
+                <div>
+                  <p class="text-lg font-bold">Doctor Purple</p>
+                  <p class="font-mono text-gray-600">#9333EA</p>
+                  <p class="text-sm text-gray-500">
+                    Healthcare professional role
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Typography -->
+          <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+            <h4 class="mb-6 text-xl font-bold">Typography Scale</h4>
+            <div class="space-y-4">
+              <div>
+                <p class="mb-1 text-4xl font-bold">Heading 1</p>
+                <p class="font-mono text-sm text-gray-600">
+                  40px / 2.5rem / font-bold
+                </p>
+              </div>
+              <div>
+                <p class="mb-1 text-3xl font-bold">Heading 2</p>
+                <p class="font-mono text-sm text-gray-600">
+                  32px / 2rem / font-bold
+                </p>
+              </div>
+              <div>
+                <p class="mb-1 text-2xl font-bold">Heading 3</p>
+                <p class="font-mono text-sm text-gray-600">
+                  24px / 1.5rem / font-bold
+                </p>
+              </div>
+              <div>
+                <p class="mb-1 text-xl">Heading 4</p>
+                <p class="font-mono text-sm text-gray-600">
+                  20px / 1.25rem / font-semibold
+                </p>
+              </div>
+              <div>
+                <p class="mb-1 text-lg">Body Large</p>
+                <p class="font-mono text-sm text-gray-600">
+                  18px / 1.125rem / font-normal
+                </p>
+              </div>
+              <div>
+                <p class="mb-1 text-base">Body Regular (Base)</p>
+                <p class="font-mono text-sm text-gray-600">
+                  16px / 1rem / font-normal
+                </p>
+              </div>
+              <div>
+                <p class="mb-1 text-sm">Small Text</p>
+                <p class="font-mono text-sm text-gray-600">
+                  14px / 0.875rem / font-normal
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Spacing & Sizing -->
+      <section class="mb-16">
+        <h3 class="mb-8 text-3xl font-bold">Spacing & Sizing</h3>
+
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <!-- Touch Targets -->
+          <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+            <h4 class="mb-6 text-xl font-bold">
+              Touch Targets (Elderly-Optimized)
+            </h4>
+            <div class="space-y-6">
+              <div>
+                <p class="mb-2 font-semibold">Primary Buttons</p>
+                <div
+                  class="bg-primary flex items-center justify-center rounded-lg font-semibold text-white"
+                  style="height: 56px; min-width: 160px"
+                >
+                  56px × 160px
+                </div>
+                <p class="mt-2 text-sm text-gray-600">Desktop: h-14 px-10</p>
+              </div>
+              <div>
+                <p class="mb-2 font-semibold">Secondary Buttons</p>
+                <div
+                  class="flex items-center justify-center rounded-lg bg-gray-200 font-semibold text-gray-900"
+                  style="height: 48px; min-width: 140px"
+                >
+                  48px × 140px
+                </div>
+                <p class="mt-2 text-sm text-gray-600">Desktop: h-12 px-8</p>
+              </div>
+              <div>
+                <p class="mb-2 font-semibold">Icon Buttons</p>
+                <div
+                  class="flex items-center justify-center rounded-lg border-2 border-gray-300 bg-gray-100"
+                  style="width: 56px; height: 56px"
+                >
+                  <svg
+                    class="h-6 w-6 text-gray-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 4v16m8-8H4"
+                    />
+                  </svg>
+                </div>
+                <p class="mt-2 text-sm text-gray-600">Square: 56px × 56px</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Spacing Scale -->
+          <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+            <h4 class="mb-6 text-xl font-bold">Spacing Scale</h4>
+            <div class="space-y-3">
+              <div class="flex items-center gap-4">
+                <div class="bg-primary" style="width: 8px; height: 40px"></div>
+                <div>
+                  <p class="font-semibold">2 (0.5rem)</p>
+                  <p class="text-sm text-gray-600">8px - Tight spacing</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="bg-primary" style="width: 12px; height: 40px"></div>
+                <div>
+                  <p class="font-semibold">3 (0.75rem)</p>
+                  <p class="text-sm text-gray-600">12px - Compact</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="bg-primary" style="width: 16px; height: 40px"></div>
+                <div>
+                  <p class="font-semibold">4 (1rem)</p>
+                  <p class="text-sm text-gray-600">16px - Standard</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="bg-primary" style="width: 24px; height: 40px"></div>
+                <div>
+                  <p class="font-semibold">6 (1.5rem)</p>
+                  <p class="text-sm text-gray-600">24px - Comfortable</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="bg-primary" style="width: 32px; height: 40px"></div>
+                <div>
+                  <p class="font-semibold">8 (2rem)</p>
+                  <p class="text-sm text-gray-600">32px - Spacious</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="bg-primary" style="width: 48px; height: 40px"></div>
+                <div>
+                  <p class="font-semibold">12 (3rem)</p>
+                  <p class="text-sm text-gray-600">48px - Section breaks</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Component Library -->
+      <section class="mb-16">
+        <h3 class="mb-8 text-3xl font-bold">Component Library</h3>
+        <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+          <div class="grid grid-cols-2 gap-6 md:grid-cols-4">
+            <a
+              href="02-components.html#buttons"
+              class="hover:border-primary block rounded-lg border-2 border-gray-200 p-6 transition hover:bg-blue-50"
+            >
+              <div
+                class="bg-primary mb-3 flex h-12 w-12 items-center justify-center rounded-lg"
+              >
+                <svg
+                  class="h-6 w-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
+                  />
+                </svg>
+              </div>
+              <p class="font-semibold">Buttons</p>
+              <p class="text-sm text-gray-600">15 variants</p>
+            </a>
+
+            <a
+              href="02-components.html#inputs"
+              class="hover:border-primary block rounded-lg border-2 border-gray-200 p-6 transition hover:bg-blue-50"
+            >
+              <div
+                class="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-green-500"
+              >
+                <svg
+                  class="h-6 w-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+              </div>
+              <p class="font-semibold">Form Inputs</p>
+              <p class="text-sm text-gray-600">8 types</p>
+            </a>
+
+            <a
+              href="02-components.html#cards"
+              class="hover:border-primary block rounded-lg border-2 border-gray-200 p-6 transition hover:bg-blue-50"
+            >
+              <div
+                class="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-purple-500"
+              >
+                <svg
+                  class="h-6 w-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  />
+                </svg>
+              </div>
+              <p class="font-semibold">Cards</p>
+              <p class="text-sm text-gray-600">12 layouts</p>
+            </a>
+
+            <a
+              href="03-calendar.html"
+              class="hover:border-primary block rounded-lg border-2 border-gray-200 p-6 transition hover:bg-blue-50"
+            >
+              <div
+                class="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-orange-500"
+              >
+                <svg
+                  class="h-6 w-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <p class="font-semibold">Calendar</p>
+              <p class="text-sm text-gray-600">3 views</p>
+            </a>
+
+            <a
+              href="04-forms.html"
+              class="hover:border-primary block rounded-lg border-2 border-gray-200 p-6 transition hover:bg-blue-50"
+            >
+              <div
+                class="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-pink-500"
+              >
+                <svg
+                  class="h-6 w-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                  />
+                </svg>
+              </div>
+              <p class="font-semibold">Forms</p>
+              <p class="text-sm text-gray-600">5 templates</p>
+            </a>
+
+            <a
+              href="02-components.html#notifications"
+              class="hover:border-primary block rounded-lg border-2 border-gray-200 p-6 transition hover:bg-blue-50"
+            >
+              <div
+                class="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-yellow-500"
+              >
+                <svg
+                  class="h-6 w-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                  />
+                </svg>
+              </div>
+              <p class="font-semibold">Notifications</p>
+              <p class="text-sm text-gray-600">4 types</p>
+            </a>
+
+            <a
+              href="02-components.html#badges"
+              class="hover:border-primary block rounded-lg border-2 border-gray-200 p-6 transition hover:bg-blue-50"
+            >
+              <div
+                class="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-red-500"
+              >
+                <svg
+                  class="h-6 w-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
+                  />
+                </svg>
+              </div>
+              <p class="font-semibold">Badges</p>
+              <p class="text-sm text-gray-600">Status labels</p>
+            </a>
+
+            <a
+              href="05-print-pdf.html"
+              class="hover:border-primary block rounded-lg border-2 border-gray-200 p-6 transition hover:bg-blue-50"
+            >
+              <div
+                class="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-500"
+              >
+                <svg
+                  class="h-6 w-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"
+                  />
+                </svg>
+              </div>
+              <p class="font-semibold">Print Layouts</p>
+              <p class="text-sm text-gray-600">PDF ready</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Links -->
+      <section class="mb-16">
+        <h3 class="mb-8 text-3xl font-bold">Quick Start</h3>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="border-primary rounded-lg border-2 bg-white p-8">
+            <h4 class="text-primary mb-4 text-xl font-bold">For Designers</h4>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start gap-3">
+                <svg
+                  class="text-primary mt-0.5 h-6 w-6 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span
+                  >Review
+                  <a
+                    href="01-colors-typography.html"
+                    class="text-primary underline"
+                    >Colors & Typography</a
+                  ></span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="text-primary mt-0.5 h-6 w-6 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span
+                  >Explore
+                  <a href="02-components.html" class="text-primary underline"
+                    >UI Components</a
+                  ></span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="text-primary mt-0.5 h-6 w-6 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span
+                  >Check
+                  <a href="05-print-pdf.html" class="text-primary underline"
+                    >Print Templates</a
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="rounded-lg border-2 border-gray-900 bg-white p-8">
+            <h4 class="mb-4 text-xl font-bold">For Developers</h4>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start gap-3">
+                <svg
+                  class="mt-0.5 h-6 w-6 flex-shrink-0 text-gray-900"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span
+                  >Study
+                  <a href="02-components.html" class="text-primary underline"
+                    >Component Patterns</a
+                  ></span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="mt-0.5 h-6 w-6 flex-shrink-0 text-gray-900"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span
+                  >Review
+                  <a href="04-forms.html" class="text-primary underline"
+                    >Form Validation</a
+                  ></span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="mt-0.5 h-6 w-6 flex-shrink-0 text-gray-900"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span
+                  >Check
+                  <a href="03-calendar.html" class="text-primary underline"
+                    >Calendar Logic</a
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="border-t-2 border-gray-200 pt-8">
+        <div class="text-center text-gray-600">
+          <p class="mb-2">Prescription Clarity Design System v1.0</p>
+          <p class="text-sm">
+            Built with accessibility, clarity, and medical precision
+          </p>
+          <p class="mt-4 text-sm">
+            © 2025 Prescription Clarity. HIPAA & GDPR Compliant.
+          </p>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

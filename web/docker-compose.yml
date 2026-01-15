@@ -1,0 +1,43 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: goit_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: goit
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  app:
+    build:
+      context: .
+      target: dev
+    container_name: goit_app
+    env_file:
+      - .env.dev
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/goit?schema=public
+      NEXT_PUBLIC_APP_URL: http://localhost:3000
+      PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
+      PUPPETEER_EXECUTABLE_PATH: "/usr/bin/chromium-browser"
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - .next_cache:/app/.next
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  db_data:
+  .next_cache:

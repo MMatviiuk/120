@@ -1,0 +1,33 @@
+<svg width="40" height="40" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient -->
+    <linearGradient id="pcGradient" x1="4" y1="4" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+
+    <clipPath id="clip0">
+      <rect width="36" height="36" fill="white"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip0)">
+    <!-- Capsula-->
+    <path
+      d="M12.9 24.6C11.5902 25.8074 9.86412 26.4614 8.08309 26.4251C6.30205 26.3889 4.60404 25.6653 3.34439 24.4056C2.08474 23.146 1.36109 21.448 1.32485 19.6669C1.28862 17.8859 1.94262 16.1598 3.15 14.85L14.85 3.15C16.1598 1.94263 17.8859 1.28863 19.6669 1.32486C21.4479 1.36109 23.146 2.08475 24.4056 3.3444C25.6652 4.60404 26.3889 6.30205 26.4251 8.08309C26.4614 9.86413 25.8074 11.5902 24.6 12.9M8.9985 8.9985L15.3735 15.3735"
+      stroke="url(#pcGradient)"
+      stroke-width="2.4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <!-- Sh + -->
+    <path
+      d="M25.875 22.5V29.25M22.5 25.875H29.25M34.875 23.625C34.8798 26.2447 33.9904 28.7875 32.3539 30.8331C30.7174 32.8787 28.4318 34.3046 25.875 34.875C23.3182 34.3046 21.0326 32.8787 19.3961 30.8331C17.7596 28.7875 16.8702 26.2447 16.875 23.625V20.25C16.875 19.6533 17.1121 19.081 17.534 18.659C17.956 18.2371 18.5283 18 19.125 18H32.625C33.2218 18 33.7941 18.2371 34.216 18.659C34.638 19.081 34.875 19.6533 34.875 20.25V23.625Z"
+      stroke="url(#pcGradient)"
+      stroke-width="2.4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </g>
+</svg>

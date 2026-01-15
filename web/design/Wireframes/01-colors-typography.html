@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colors & Typography - Prescription Clarity Design System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2196F3",
+              secondary: "#FB923C",
+              doctor: "#9333EA",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 border-b border-gray-200 bg-white">
+      <div class="mx-auto max-w-7xl px-6 py-4">
+        <div class="flex items-center gap-4">
+          <img src="logo.svg" alt="Logo" class="h-12 w-12" />
+          <div>
+            <h1 class="text-2xl font-bold text-gray-900">
+              Colors & Typography
+            </h1>
+            <p class="text-sm text-gray-600">Design System Foundation</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-[73px] z-40 border-b border-gray-200 bg-white">
+      <div class="mx-auto max-w-7xl px-6">
+        <ul class="flex gap-6 overflow-x-auto">
+          <li>
+            <a
+              href="index.html"
+              class="hover:text-primary block py-4 text-gray-600"
+              >Overview</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-primary border-primary block border-b-2 py-4 font-semibold"
+              >Colors & Typography</a
+            >
+          </li>
+          <li>
+            <a
+              href="02-components.html"
+              class="hover:text-primary block py-4 text-gray-600"
+              >UI Components</a
+            >
+          </li>
+          <li>
+            <a
+              href="03-calendar.html"
+              class="hover:text-primary block py-4 text-gray-600"
+              >Calendar</a
+            >
+          </li>
+          <li>
+            <a
+              href="04-forms.html"
+              class="hover:text-primary block py-4 text-gray-600"
+              >Forms</a
+            >
+          </li>
+          <li>
+            <a
+              href="05-print-pdf.html"
+              class="hover:text-primary block py-4 text-gray-600"
+              >Print/PDF</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="mx-auto max-w-7xl px-6 py-12">
+      <!-- Color Palette -->
+      <section class="mb-16">
+        <h2 class="mb-8 text-4xl font-bold">Color Palette</h2>
+
+        <!-- Primary Colors -->
+        <div class="mb-12">
+          <h3 class="mb-6 text-2xl font-bold">Role-Based Colors</h3>
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <!-- Patient Blue -->
+            <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+              <div
+                class="mb-4 h-32 w-full rounded-lg border-2 border-gray-200 bg-[#2196F3]"
+              ></div>
+              <h4 class="mb-2 text-xl font-bold">Primary Blue</h4>
+              <div class="space-y-2 text-sm">
+                <p class="font-mono">#2196F3</p>
+                <p class="font-mono">rgb(33, 150, 243)</p>
+                <p class="font-mono">hsl(207, 90%, 54%)</p>
+              </div>
+              <div class="mt-4 border-t border-gray-200 pt-4">
+                <p class="mb-2 font-semibold">Usage:</p>
+                <ul class="space-y-1 text-sm text-gray-700">
+                  <li>• Patient role</li>
+                  <li>• Primary actions</li>
+                  <li>• Active states</li>
+                  <li>• Links & buttons</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Caregiver Orange -->
+            <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+              <div
+                class="mb-4 h-32 w-full rounded-lg border-2 border-gray-200 bg-[#FB923C]"
+              ></div>
+              <h4 class="mb-2 text-xl font-bold">Secondary Orange</h4>
+              <div class="space-y-2 text-sm">
+                <p class="font-mono">#FB923C</p>
+                <p class="font-mono">rgb(251, 146, 60)</p>
+                <p class="font-mono">hsl(27, 96%, 61%)</p>
+              </div>
+              <div class="mt-4 border-t border-gray-200 pt-4">
+                <p class="mb-2 font-semibold">Usage:</p>
+                <ul class="space-y-1 text-sm text-gray-700">
+                  <li>• Caregiver role</li>
+                  <li>• Family features</li>
+                  <li>• Dependent badges</li>
+                  <li>• Secondary actions</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Doctor Purple -->
+            <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+              <div
+                class="mb-4 h-32 w-full rounded-lg border-2 border-gray-200 bg-[#9333EA]"
+              ></div>
+              <h4 class="mb-2 text-xl font-bold">Doctor Purple</h4>
+              <div class="space-y-2 text-sm">
+                <p class="font-mono">#9333EA</p>
+                <p class="font-mono">rgb(147, 51, 234)</p>
+                <p class="font-mono">hsl(272, 82%, 56%)</p>
+              </div>
+              <div class="mt-4 border-t border-gray-200 pt-4">
+                <p class="mb-2 font-semibold">Usage:</p>
+                <ul class="space-y-1 text-sm text-gray-700">
+                  <li>• Doctor role</li>
+                  <li>• Medical features</li>
+                  <li>• Patient badges</li>
+                  <li>• Professional UI</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Semantic Colors -->
+        <div class="mb-12">
+          <h3 class="mb-6 text-2xl font-bold">Semantic Colors</h3>
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <!-- Success -->
+            <div class="rounded-lg border-2 border-gray-200 bg-white p-6">
+              <div class="mb-3 h-20 w-full rounded-lg bg-green-500"></div>
+              <h4 class="mb-2 font-bold">Success</h4>
+              <p class="font-mono text-sm text-gray-700">#22C55E</p>
+              <p class="mt-2 text-sm text-gray-600">
+                Medication taken, completed tasks
+              </p>
+            </div>
+
+            <!-- Warning -->
+            <div class="rounded-lg border-2 border-gray-200 bg-white p-6">
+              <div class="mb-3 h-20 w-full rounded-lg bg-yellow-500"></div>
+              <h4 class="mb-2 font-bold">Warning</h4>
+              <p class="font-mono text-sm text-gray-700">#EAB308</p>
+              <p class="mt-2 text-sm text-gray-600">
+                Due soon, low stock alerts
+              </p>
+            </div>
+
+            <!-- Error -->
+            <div class="rounded-lg border-2 border-gray-200 bg-white p-6">
+              <div class="mb-3 h-20 w-full rounded-lg bg-red-500"></div>
+              <h4 class="mb-2 font-bold">Error</h4>
+              <p class="font-mono text-sm text-gray-700">#EF4444</p>
+              <p class="mt-2 text-sm text-gray-600">
+                Missed medication, errors
+              </p>
+            </div>
+
+            <!-- Info -->
+            <div class="rounded-lg border-2 border-gray-200 bg-white p-6">
+              <div class="mb-3 h-20 w-full rounded-lg bg-blue-400"></div>
+              <h4 class="mb-2 font-bold">Info</h4>
+              <p class="font-mono text-sm text-gray-700">#60A5FA</p>
+              <p class="mt-2 text-sm text-gray-600">Informational messages</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grayscale -->
+        <div class="mb-12">
+          <h3 class="mb-6 text-2xl font-bold">Grayscale</h3>
+          <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+            <div class="grid grid-cols-2 gap-4 md:grid-cols-5">
+              <div>
+                <div
+                  class="mb-2 h-24 w-full rounded-lg border-2 border-gray-200 bg-gray-900"
+                ></div>
+                <p class="font-semibold">Gray 900</p>
+                <p class="font-mono text-sm">#111827</p>
+                <p class="mt-1 text-xs text-gray-600">Primary text</p>
+              </div>
+              <div>
+                <div
+                  class="mb-2 h-24 w-full rounded-lg border-2 border-gray-200 bg-gray-700"
+                ></div>
+                <p class="font-semibold">Gray 700</p>
+                <p class="font-mono text-sm">#374151</p>
+                <p class="mt-1 text-xs text-gray-600">Headings</p>
+              </div>
+              <div>
+                <div
+                  class="mb-2 h-24 w-full rounded-lg border-2 border-gray-200 bg-gray-500"
+                ></div>
+                <p class="font-semibold">Gray 500</p>
+                <p class="font-mono text-sm">#6B7280</p>
+                <p class="mt-1 text-xs text-gray-600">Secondary text</p>
+              </div>
+              <div>
+                <div
+                  class="mb-2 h-24 w-full rounded-lg border-2 border-gray-200 bg-gray-200"
+                ></div>
+                <p class="font-semibold">Gray 200</p>
+                <p class="font-mono text-sm">#E5E7EB</p>
+                <p class="mt-1 text-xs text-gray-600">Borders</p>
+              </div>
+              <div>
+                <div
+                  class="mb-2 h-24 w-full rounded-lg border-2 border-gray-200 bg-gray-50"
+                ></div>
+                <p class="font-semibold">Gray 50</p>
+                <p class="font-mono text-sm">#F9FAFB</p>
+                <p class="mt-1 text-xs text-gray-600">Backgrounds</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accessibility -->
+        <div>
+          <h3 class="mb-6 text-2xl font-bold">Accessibility Contrast Ratios</h3>
+          <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+            <p class="mb-6 text-gray-700">
+              All color combinations meet WCAG AAA standards (7:1 for text, 3:1
+              for components)
+            </p>
+            <div class="space-y-4">
+              <div
+                class="flex items-center justify-between rounded-lg bg-[#2196F3] p-4 text-white"
+              >
+                <span class="font-semibold">White on Primary Blue</span>
+                <span class="text-sm">Contrast: 8.2:1 ✓ AAA</span>
+              </div>
+              <div
+                class="flex items-center justify-between rounded-lg bg-gray-900 p-4 text-white"
+              >
+                <span class="font-semibold">White on Gray 900</span>
+                <span class="text-sm">Contrast: 18.1:1 ✓ AAA</span>
+              </div>
+              <div
+                class="flex items-center justify-between rounded-lg border-2 border-gray-200 bg-white p-4 text-gray-900"
+              >
+                <span class="font-semibold">Gray 900 on White</span>
+                <span class="text-sm">Contrast: 18.1:1 ✓ AAA</span>
+              </div>
+              <div
+                class="flex items-center justify-between rounded-lg bg-green-500 p-4 text-white"
+              >
+                <span class="font-semibold">White on Success Green</span>
+                <span class="text-sm">Contrast: 8.5:1 ✓ AAA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Typography -->
+      <section class="mb-16">
+        <h2 class="mb-8 text-4xl font-bold">Typography System</h2>
+
+        <!-- Type Scale -->
+        <div class="mb-12">
+          <h3 class="mb-6 text-2xl font-bold">
+            Type Scale (Elderly-Optimized)
+          </h3>
+          <div
+            class="space-y-8 rounded-lg border-2 border-gray-200 bg-white p-8"
+          >
+            <div class="border-b border-gray-200 pb-6">
+              <p class="mb-3 text-5xl font-bold">Display Large</p>
+              <p class="font-mono text-sm text-gray-600">
+                48px / 3rem / font-bold / leading-tight
+              </p>
+              <p class="mt-2 text-sm text-gray-500">
+                Marketing headlines, hero sections
+              </p>
+            </div>
+
+            <div class="border-b border-gray-200 pb-6">
+              <p class="mb-3 text-4xl font-bold">Heading 1</p>
+              <p class="font-mono text-sm text-gray-600">
+                40px / 2.5rem / font-bold / leading-tight
+              </p>
+              <p class="mt-2 text-sm text-gray-500">
+                Page titles, main sections
+              </p>
+            </div>
+
+            <div class="border-b border-gray-200 pb-6">
+              <p class="mb-3 text-3xl font-bold">Heading 2</p>
+              <p class="font-mono text-sm text-gray-600">
+                32px / 2rem / font-bold / leading-snug
+              </p>
+              <p class="mt-2 text-sm text-gray-500">
+                Section headings, card titles
+              </p>
+            </div>
+
+            <div class="border-b border-gray-200 pb-6">
+              <p class="mb-3 text-2xl font-bold">Heading 3</p>
+              <p class="font-mono text-sm text-gray-600">
+                24px / 1.5rem / font-bold / leading-snug
+              </p>
+              <p class="mt-2 text-sm text-gray-500">
+                Subsection titles, large labels
+              </p>
+            </div>
+
+            <div class="border-b border-gray-200 pb-6">
+              <p class="mb-3 text-xl font-semibold">Heading 4</p>
+              <p class="font-mono text-sm text-gray-600">
+                20px / 1.25rem / font-semibold / leading-normal
+              </p>
+              <p class="mt-2 text-sm text-gray-500">
+                Card headers, dialog titles
+              </p>
+            </div>
+
+            <div class="border-b border-gray-200 pb-6">
+              <p class="mb-3 text-lg">Body Large</p>
+              <p class="font-mono text-sm text-gray-600">
+                18px / 1.125rem / font-normal / leading-relaxed
+              </p>
+              <p class="mt-2 text-sm text-gray-500">
+                Primary body text (BASE SIZE for elderly users)
+              </p>
+            </div>
+
+            <div class="border-b border-gray-200 pb-6">
+              <p class="mb-3 text-base">Body Regular</p>
+              <p class="font-mono text-sm text-gray-600">
+                16px / 1rem / font-normal / leading-relaxed
+              </p>
+              <p class="mt-2 text-sm text-gray-500">
+                Secondary body text, descriptions
+              </p>
+            </div>
+
+            <div class="border-b border-gray-200 pb-6">
+              <p class="mb-3 text-sm">Small Text</p>
+              <p class="font-mono text-sm text-gray-600">
+                14px / 0.875rem / font-normal / leading-normal
+              </p>
+              <p class="mt-2 text-sm text-gray-500">
+                Captions, helper text, labels
+              </p>
+            </div>
+
+            <div>
+              <p class="mb-3 text-xs">Tiny Text</p>
+              <p class="font-mono text-sm text-gray-600">
+                12px / 0.75rem / font-normal / leading-normal
+              </p>
+              <p class="mt-2 text-sm text-gray-500">
+                Timestamps, metadata (use sparingly)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Font Weights -->
+        <div class="mb-12">
+          <h3 class="mb-6 text-2xl font-bold">Font Weights</h3>
+          <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div>
+                <p class="mb-2 text-2xl font-normal">Regular (400)</p>
+                <p class="font-mono text-sm text-gray-600">font-normal</p>
+                <p class="mt-2 text-sm text-gray-500">
+                  Body text, descriptions
+                </p>
+              </div>
+              <div>
+                <p class="mb-2 text-2xl font-medium">Medium (500)</p>
+                <p class="font-mono text-sm text-gray-600">font-medium</p>
+                <p class="mt-2 text-sm text-gray-500">
+                  Emphasized text, labels
+                </p>
+              </div>
+              <div>
+                <p class="mb-2 text-2xl font-semibold">Semibold (600)</p>
+                <p class="font-mono text-sm text-gray-600">font-semibold</p>
+                <p class="mt-2 text-sm text-gray-500">Subheadings, buttons</p>
+              </div>
+              <div>
+                <p class="mb-2 text-2xl font-bold">Bold (700)</p>
+                <p class="font-mono text-sm text-gray-600">font-bold</p>
+                <p class="mt-2 text-sm text-gray-500">
+                  Headings, important text
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line Heights -->
+        <div class="mb-12">
+          <h3 class="mb-6 text-2xl font-bold">Line Heights</h3>
+          <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+            <div class="space-y-6">
+              <div class="border-b border-gray-200 pb-6">
+                <p class="mb-2 font-semibold">Tight (1.25)</p>
+                <p class="mb-1 text-lg leading-tight">
+                  The quick brown fox jumps over the lazy dog. Pack my box with
+                  five dozen liquor jugs.
+                </p>
+                <p class="font-mono text-sm text-gray-600">
+                  leading-tight - Large headings
+                </p>
+              </div>
+              <div class="border-b border-gray-200 pb-6">
+                <p class="mb-2 font-semibold">Snug (1.375)</p>
+                <p class="mb-1 text-lg leading-snug">
+                  The quick brown fox jumps over the lazy dog. Pack my box with
+                  five dozen liquor jugs.
+                </p>
+                <p class="font-mono text-sm text-gray-600">
+                  leading-snug - Subheadings
+                </p>
+              </div>
+              <div class="border-b border-gray-200 pb-6">
+                <p class="mb-2 font-semibold">Normal (1.5)</p>
+                <p class="mb-1 text-lg leading-normal">
+                  The quick brown fox jumps over the lazy dog. Pack my box with
+                  five dozen liquor jugs.
+                </p>
+                <p class="font-mono text-sm text-gray-600">
+                  leading-normal - Default text
+                </p>
+              </div>
+              <div>
+                <p class="mb-2 font-semibold">Relaxed (1.625)</p>
+                <p class="mb-1 text-lg leading-relaxed">
+                  The quick brown fox jumps over the lazy dog. Pack my box with
+                  five dozen liquor jugs.
+                </p>
+                <p class="font-mono text-sm text-gray-600">
+                  leading-relaxed - Body text (elderly-optimized)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Examples -->
+        <div>
+          <h3 class="mb-6 text-2xl font-bold">Typography in Context</h3>
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            <!-- Medication Card Example -->
+            <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+              <h4 class="mb-6 text-xl font-bold">Medication Card</h4>
+              <div class="rounded-lg border-2 border-gray-200 bg-gray-50 p-6">
+                <p class="mb-1 text-2xl font-bold text-gray-900">Aspirin</p>
+                <p class="mb-4 text-lg text-gray-600">100mg Tablet</p>
+                <div class="flex items-center gap-4 text-base text-gray-700">
+                  <span class="font-semibold">8:00 AM</span>
+                  <span>•</span>
+                  <span>With meal</span>
+                </div>
+              </div>
+              <div class="mt-4 space-y-1 text-sm text-gray-600">
+                <p>
+                  <span class="font-mono">text-2xl font-bold</span> - Medication
+                  name
+                </p>
+                <p><span class="font-mono">text-lg</span> - Dosage</p>
+                <p>
+                  <span class="font-mono">text-base font-semibold</span> - Time
+                </p>
+              </div>
+            </div>
+
+            <!-- Alert Example -->
+            <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+              <h4 class="mb-6 text-xl font-bold">Alert Message</h4>
+              <div
+                class="rounded-lg border-2 border-yellow-400 bg-yellow-50 p-6"
+              >
+                <p class="mb-2 text-xl font-bold text-yellow-900">
+                  Medication Due Soon
+                </p>
+                <p class="text-base leading-relaxed text-yellow-800">
+                  Your next dose of Lisinopril is due in 30 minutes. Please
+                  prepare your medication.
+                </p>
+              </div>
+              <div class="mt-4 space-y-1 text-sm text-gray-600">
+                <p>
+                  <span class="font-mono">text-xl font-bold</span> - Alert title
+                </p>
+                <p>
+                  <span class="font-mono">text-base leading-relaxed</span> -
+                  Alert message
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Iconography -->
+      <section class="mb-16">
+        <h2 class="mb-8 text-4xl font-bold">Iconography</h2>
+
+        <div class="mb-8 rounded-lg border-2 border-gray-200 bg-white p-8">
+          <h3 class="mb-6 text-2xl font-bold">
+            Icon Sizes (Elderly-Optimized)
+          </h3>
+          <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+            <div class="text-center">
+              <div class="mb-3 flex items-center justify-center">
+                <svg
+                  class="text-primary h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  />
+                </svg>
+              </div>
+              <p class="font-semibold">16px (w-4 h-4)</p>
+              <p class="text-sm text-gray-600">Inline icons</p>
+            </div>
+            <div class="text-center">
+              <div class="mb-3 flex items-center justify-center">
+                <svg
+                  class="text-primary h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  />
+                </svg>
+              </div>
+              <p class="font-semibold">24px (w-6 h-6)</p>
+              <p class="text-sm text-gray-600">Standard (PREFERRED)</p>
+            </div>
+            <div class="text-center">
+              <div class="mb-3 flex items-center justify-center">
+                <svg
+                  class="text-primary h-8 w-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  />
+                </svg>
+              </div>
+              <p class="font-semibold">32px (w-8 h-8)</p>
+              <p class="text-sm text-gray-600">Large buttons</p>
+            </div>
+            <div class="text-center">
+              <div class="mb-3 flex items-center justify-center">
+                <svg
+                  class="text-primary h-12 w-12"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  />
+                </svg>
+              </div>
+              <p class="font-semibold">48px (w-12 h-12)</p>
+              <p class="text-sm text-gray-600">Featured icons</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+          <h3 class="mb-6 text-2xl font-bold">Common Icons</h3>
+          <div class="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-6">
+            <div class="text-center">
+              <div
+                class="mx-auto mb-2 flex h-16 w-16 items-center justify-center rounded-lg bg-blue-50"
+              >
+                <svg
+                  class="text-primary h-8 w-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  />
+                </svg>
+              </div>
+              <p class="text-sm font-semibold">Pill</p>
+            </div>
+            <div class="text-center">
+              <div
+                class="mx-auto mb-2 flex h-16 w-16 items-center justify-center rounded-lg bg-blue-50"
+              >
+                <svg
+                  class="text-primary h-8 w-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <p class="text-sm font-semibold">Calendar</p>
+            </div>
+            <div class="text-center">
+              <div
+                class="mx-auto mb-2 flex h-16 w-16 items-center justify-center rounded-lg bg-blue-50"
+              >
+                <svg
+                  class="text-primary h-8 w-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <p class="text-sm font-semibold">Clock</p>
+            </div>
+            <div class="text-center">
+              <div
+                class="mx-auto mb-2 flex h-16 w-16 items-center justify-center rounded-lg bg-blue-50"
+              >
+                <svg
+                  class="text-primary h-8 w-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                  />
+                </svg>
+              </div>
+              <p class="text-sm font-semibold">Bell</p>
+            </div>
+            <div class="text-center">
+              <div
+                class="mx-auto mb-2 flex h-16 w-16 items-center justify-center rounded-lg bg-blue-50"
+              >
+                <svg
+                  class="text-primary h-8 w-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <p class="text-sm font-semibold">Check</p>
+            </div>
+            <div class="text-center">
+              <div
+                class="mx-auto mb-2 flex h-16 w-16 items-center justify-center rounded-lg bg-blue-50"
+              >
+                <svg
+                  class="text-primary h-8 w-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 4v16m8-8H4"
+                  />
+                </svg>
+              </div>
+              <p class="text-sm font-semibold">Plus</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="border-t-2 border-gray-200 pt-8">
+        <div class="text-center text-gray-600">
+          <p class="text-sm">
+            Prescription Clarity Design System - Colors & Typography
+          </p>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

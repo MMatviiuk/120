@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI Components - Prescription Clarity Design System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2196F3",
+              secondary: "#FB923C",
+              doctor: "#9333EA",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 border-b border-gray-200 bg-white">
+      <div class="mx-auto max-w-7xl px-6 py-4">
+        <div class="flex items-center gap-4">
+          <img src="logo.svg" alt="Logo" class="h-12 w-12" />
+          <div>
+            <h1 class="text-2xl font-bold text-gray-900">UI Components</h1>
+            <p class="text-sm text-gray-600">Reusable Component Library</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-[73px] z-40 border-b border-gray-200 bg-white">
+      <div class="mx-auto max-w-7xl px-6">
+        <ul class="flex gap-6 overflow-x-auto">
+          <li>
+            <a
+              href="index.html"
+              class="hover:text-primary block py-4 text-gray-600"
+              >Overview</a
+            >
+          </li>
+          <li>
+            <a
+              href="01-colors-typography.html"
+              class="hover:text-primary block py-4 text-gray-600"
+              >Colors & Typography</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-primary border-primary block border-b-2 py-4 font-semibold"
+              >UI Components</a
+            >
+          </li>
+          <li>
+            <a
+              href="03-calendar.html"
+              class="hover:text-primary block py-4 text-gray-600"
+              >Calendar</a
+            >
+          </li>
+          <li>
+            <a
+              href="04-forms.html"
+              class="hover:text-primary block py-4 text-gray-600"
+              >Forms</a
+            >
+          </li>
+          <li>
+            <a
+              href="05-print-pdf.html"
+              class="hover:text-primary block py-4 text-gray-600"
+              >Print/PDF</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="mx-auto max-w-7xl px-6 py-12">
+      <!-- Buttons -->
+      <section id="buttons" class="mb-16">
+        <h2 class="mb-8 text-4xl font-bold">Buttons</h2>
+
+        <!-- Primary Buttons -->
+        <div class="mb-8 rounded-lg border-2 border-gray-200 bg-white p-8">
+          <h3 class="mb-6 text-2xl font-bold">
+            Primary Buttons (56px height - elderly-optimized)
+          </h3>
+          <div class="flex flex-wrap gap-4">
+            <button
+              class="h-14 rounded-lg bg-[#2196F3] px-10 font-semibold text-white transition hover:bg-blue-600 active:scale-95"
+            >
+              Primary Button
+            </button>
+            <button
+              class="flex h-14 items-center gap-3 rounded-lg bg-[#2196F3] px-10 font-semibold text-white transition hover:bg-blue-600 active:scale-95"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 4v16m8-8H4"
+                />
+              </svg>
+              With Icon
+            </button>
+            <button
+              class="h-14 cursor-not-allowed rounded-lg bg-gray-300 px-10 font-semibold text-gray-500"
+              disabled
+            >
+              Disabled
+            </button>
+          </div>
+          <p class="mt-4 font-mono text-sm text-gray-600">
+            h-14 px-10 bg-primary text-white rounded-lg font-semibold
+          </p>
+        </div>
+
+        <!-- Secondary Buttons -->
+        <div class="mb-8 rounded-lg border-2 border-gray-200 bg-white p-8">
+          <h3 class="mb-6 text-2xl font-bold">Secondary Buttons</h3>
+          <div class="flex flex-wrap gap-4">
+            <button
+              class="h-14 rounded-lg border-2 border-[#2196F3] bg-white px-10 font-semibold text-[#2196F3] transition hover:bg-blue-50 active:scale-95"
+            >
+              Secondary
+            </button>
+            <button
+              class="h-14 rounded-lg border-2 border-gray-300 bg-gray-100 px-10 font-semibold text-gray-900 transition hover:bg-gray-200 active:scale-95"
+            >
+              Ghost Button
+            </button>
+            <button
+              class="h-14 rounded-lg bg-red-500 px-10 font-semibold text-white transition hover:bg-red-600 active:scale-95"
+            >
+              Danger
+            </button>
+            <button
+              class="h-14 rounded-lg bg-green-500 px-10 font-semibold text-white transition hover:bg-green-600 active:scale-95"
+            >
+              Success
+            </button>
+          </div>
+          <p class="mt-4 font-mono text-sm text-gray-600">
+            h-14 px-10 border-2 rounded-lg font-semibold
+          </p>
+        </div>
+
+        <!-- Icon Buttons -->
+        <div class="mb-8 rounded-lg border-2 border-gray-200 bg-white p-8">
+          <h3 class="mb-6 text-2xl font-bold">
+            Icon Buttons (56px square - elderly-optimized)
+          </h3>
+          <div class="flex flex-wrap gap-4">
+            <button
+              class="flex h-14 w-14 items-center justify-center rounded-lg bg-[#2196F3] text-white transition hover:bg-blue-600 active:scale-95"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 4v16m8-8H4"
+                />
+              </svg>
+            </button>
+            <button
+              class="flex h-14 w-14 items-center justify-center rounded-lg border-2 border-[#2196F3] bg-white text-[#2196F3] transition hover:bg-blue-50 active:scale-95"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+                />
+              </svg>
+            </button>
+            <button
+              class="flex h-14 w-14 items-center justify-center rounded-lg border-2 border-red-500 bg-white text-red-500 transition hover:bg-red-50 active:scale-95"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                />
+              </svg>
+            </button>
+            <button
+              class="flex h-14 w-14 cursor-not-allowed items-center justify-center rounded-lg bg-gray-100 text-gray-400"
+              disabled
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 4v16m8-8H4"
+                />
+              </svg>
+            </button>
+          </div>
+          <p class="mt-4 font-mono text-sm text-gray-600">
+            w-14 h-14 rounded-lg flex items-center justify-center
+          </p>
+        </div>
+
+        <!-- Button Sizes -->
+        <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+          <h3 class="mb-6 text-2xl font-bold">Button Sizes</h3>
+          <div class="flex flex-wrap items-end gap-4">
+            <button
+              class="h-10 rounded-lg bg-[#2196F3] px-6 text-sm font-semibold text-white transition hover:bg-blue-600 active:scale-95"
+            >
+              Small (40px)
+            </button>
+            <button
+              class="h-12 rounded-lg bg-[#2196F3] px-8 font-semibold text-white transition hover:bg-blue-600 active:scale-95"
+            >
+              Medium (48px)
+            </button>
+            <button
+              class="h-14 rounded-lg bg-[#2196F3] px-10 font-semibold text-white transition hover:bg-blue-600 active:scale-95"
+            >
+              Large (56px)
+            </button>
+            <button
+              class="h-16 rounded-lg bg-[#2196F3] px-12 text-lg font-semibold text-white transition hover:bg-blue-600 active:scale-95"
+            >
+              Extra Large (64px)
+            </button>
+          </div>
+          <p class="mt-4 text-sm text-gray-600">
+            Recommended: Large (56px) for elderly users
+          </p>
+        </div>
+      </section>
+
+      <!-- Cards -->
+      <section id="cards" class="mb-16">
+        <h2 class="mb-8 text-4xl font-bold">Cards</h2>
+
+        <div class="mb-8 grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <!-- Medication Card -->
+          <div class="rounded-lg border-2 border-gray-200 bg-white p-6">
+            <h3 class="mb-4 text-xl font-bold">Medication Card</h3>
+            <div class="rounded-lg border-2 border-gray-200 bg-gray-50 p-6">
+              <div class="mb-4 flex items-start justify-between">
+                <div class="flex flex-1 items-start gap-4">
+                  <div
+                    class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-lg border-2 border-gray-300 bg-white"
+                  >
+                    <svg
+                      class="h-6 w-6 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                      />
+                    </svg>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <h4 class="mb-1 text-2xl font-bold text-gray-900">
+                      Aspirin
+                    </h4>
+                    <p class="text-lg text-gray-600">100mg Tablet</p>
+                  </div>
+                </div>
+                <button
+                  class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-lg bg-green-500 text-white transition hover:bg-green-600 active:scale-95"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="mb-4 flex items-center gap-4 text-base text-gray-700">
+                <span class="font-semibold">8:00 AM</span>
+                <span>•</span>
+                <span>With meal</span>
+              </div>
+              <div class="flex gap-3">
+                <button
+                  class="h-12 rounded-lg border-2 border-gray-300 bg-white px-6 font-semibold text-gray-700 transition hover:bg-gray-50 active:scale-95"
+                >
+                  Edit
+                </button>
+                <button
+                  class="h-12 rounded-lg border-2 border-gray-300 bg-white px-6 font-semibold text-gray-700 transition hover:bg-gray-50 active:scale-95"
+                >
+                  Print
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stat Card -->
+          <div class="rounded-lg border-2 border-gray-200 bg-white p-6">
+            <h3 class="mb-4 text-xl font-bold">Stat Card</h3>
+            <div
+              class="rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 p-6 text-white"
+            >
+              <div class="mb-4 flex items-center gap-4">
+                <div
+                  class="flex h-16 w-16 items-center justify-center rounded-lg bg-white/20"
+                >
+                  <svg
+                    class="h-8 w-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-5xl font-bold">94%</p>
+                </div>
+              </div>
+              <p class="text-xl font-semibold">Adherence Rate</p>
+              <p class="text-white/80">Last 30 days</p>
+            </div>
+          </div>
+
+          <!-- Alert Card -->
+          <div class="rounded-lg border-2 border-gray-200 bg-white p-6">
+            <h3 class="mb-4 text-xl font-bold">Alert Card</h3>
+            <div class="rounded-lg border-2 border-yellow-400 bg-yellow-50 p-6">
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-yellow-400"
+                >
+                  <svg
+                    class="h-6 w-6 text-yellow-900"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                    />
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <p class="mb-2 text-xl font-bold text-yellow-900">
+                    Medication Due Soon
+                  </p>
+                  <p class="text-base text-yellow-800">
+                    Your next dose is due in 30 minutes.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Success Card -->
+          <div class="rounded-lg border-2 border-gray-200 bg-white p-6">
+            <h3 class="mb-4 text-xl font-bold">Success Card</h3>
+            <div class="rounded-lg border-2 border-green-500 bg-green-50 p-6">
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-green-500"
+                >
+                  <svg
+                    class="h-6 w-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <p class="mb-2 text-xl font-bold text-green-900">
+                    All Medications Taken!
+                  </p>
+                  <p class="text-base text-green-800">
+                    Great job staying on schedule today.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Inputs -->
+      <section id="inputs" class="mb-16">
+        <h2 class="mb-8 text-4xl font-bold">Form Inputs</h2>
+
+        <div class="mb-8 rounded-lg border-2 border-gray-200 bg-white p-8">
+          <h3 class="mb-6 text-2xl font-bold">
+            Text Inputs (56px height - elderly-optimized)
+          </h3>
+          <div class="max-w-2xl space-y-6">
+            <div>
+              <label class="mb-2 block text-lg font-semibold text-gray-900"
+                >Medication Name</label
+              >
+              <input
+                type="text"
+                placeholder="Enter medication name"
+                class="h-14 w-full rounded-lg border-2 border-gray-300 px-4 text-lg focus:border-[#2196F3] focus:outline-none"
+              />
+              <p class="mt-2 font-mono text-sm text-gray-600">
+                h-14 px-4 border-2 rounded-lg text-lg
+              </p>
+            </div>
+            <div>
+              <label class="mb-2 block text-lg font-semibold text-gray-900"
+                >Dosage</label
+              >
+              <input
+                type="text"
+                placeholder="100mg"
+                class="h-14 w-full rounded-lg border-2 border-gray-300 px-4 text-lg focus:border-[#2196F3] focus:outline-none"
+              />
+            </div>
+            <div>
+              <label class="mb-2 block text-lg font-semibold text-gray-900"
+                >Notes (Textarea)</label
+              >
+              <textarea
+                placeholder="Additional instructions..."
+                rows="4"
+                class="w-full resize-none rounded-lg border-2 border-gray-300 px-4 py-3 text-lg focus:border-[#2196F3] focus:outline-none"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-8 rounded-lg border-2 border-gray-200 bg-white p-8">
+          <h3 class="mb-6 text-2xl font-bold">Select Dropdown</h3>
+          <div class="max-w-2xl space-y-6">
+            <div>
+              <label class="mb-2 block text-lg font-semibold text-gray-900"
+                >Form Type</label
+              >
+              <select
+                class="bg-[url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27currentColor%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e')] h-14 w-full appearance-none rounded-lg border-2 border-gray-300 bg-white bg-[length:24px] bg-[right_1rem_center] bg-no-repeat px-4 pr-12 text-lg focus:border-[#2196F3] focus:outline-none"
+              >
+                <option>Tablet</option>
+                <option>Capsule</option>
+                <option>Liquid</option>
+                <option>Injection</option>
+                <option>Cream/Ointment</option>
+                <option>Inhaler</option>
+                <option>Powder</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+          <h3 class="mb-6 text-2xl font-bold">
+            Checkbox & Radio (24px - elderly-optimized)
+          </h3>
+          <div class="grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
+            <div>
+              <p class="mb-4 font-semibold">Checkboxes</p>
+              <div class="space-y-4">
+                <label class="flex cursor-pointer items-center gap-3">
+                  <input
+                    type="checkbox"
+                    class="h-6 w-6 rounded border-2 border-gray-300 text-[#2196F3] focus:ring-2 focus:ring-[#2196F3]"
+                  />
+                  <span class="text-lg">Before meal</span>
+                </label>
+                <label class="flex cursor-pointer items-center gap-3">
+                  <input
+                    type="checkbox"
+                    checked
+                    class="h-6 w-6 rounded border-2 border-gray-300 text-[#2196F3] focus:ring-2 focus:ring-[#2196F3]"
+                  />
+                  <span class="text-lg">With meal</span>
+                </label>
+                <label class="flex cursor-pointer items-center gap-3">
+                  <input
+                    type="checkbox"
+                    class="h-6 w-6 rounded border-2 border-gray-300 text-[#2196F3] focus:ring-2 focus:ring-[#2196F3]"
+                  />
+                  <span class="text-lg">After meal</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <p class="mb-4 font-semibold">Radio Buttons</p>
+              <div class="space-y-4">
+                <label class="flex cursor-pointer items-center gap-3">
+                  <input
+                    type="radio"
+                    name="frequency"
+                    class="h-6 w-6 border-2 border-gray-300 text-[#2196F3] focus:ring-2 focus:ring-[#2196F3]"
+                  />
+                  <span class="text-lg">Once daily</span>
+                </label>
+                <label class="flex cursor-pointer items-center gap-3">
+                  <input
+                    type="radio"
+                    name="frequency"
+                    checked
+                    class="h-6 w-6 border-2 border-gray-300 text-[#2196F3] focus:ring-2 focus:ring-[#2196F3]"
+                  />
+                  <span class="text-lg">Twice daily</span>
+                </label>
+                <label class="flex cursor-pointer items-center gap-3">
+                  <input
+                    type="radio"
+                    name="frequency"
+                    class="h-6 w-6 border-2 border-gray-300 text-[#2196F3] focus:ring-2 focus:ring-[#2196F3]"
+                  />
+                  <span class="text-lg">Three times daily</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Badges -->
+      <section id="badges" class="mb-16">
+        <h2 class="mb-8 text-4xl font-bold">Badges & Status Labels</h2>
+
+        <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+          <h3 class="mb-6 text-2xl font-bold">Status Badges</h3>
+          <div class="flex flex-wrap gap-4">
+            <span
+              class="inline-flex items-center gap-2 rounded-lg border-2 border-green-500 bg-green-100 px-4 py-2 text-base font-semibold text-green-800"
+            >
+              <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              Active
+            </span>
+            <span
+              class="inline-flex items-center gap-2 rounded-lg border-2 border-blue-500 bg-blue-100 px-4 py-2 text-base font-semibold text-blue-800"
+            >
+              <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              Scheduled
+            </span>
+            <span
+              class="inline-flex items-center gap-2 rounded-lg border-2 border-gray-400 bg-gray-100 px-4 py-2 text-base font-semibold text-gray-800"
+            >
+              <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              Completed
+            </span>
+            <span
+              class="inline-flex items-center gap-2 rounded-lg border-2 border-red-500 bg-red-100 px-4 py-2 text-base font-semibold text-red-800"
+            >
+              <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                />
+              </svg>
+              Deleted
+            </span>
+            <span
+              class="inline-flex items-center gap-2 rounded-lg border-2 border-yellow-500 bg-yellow-100 px-4 py-2 text-base font-semibold text-yellow-800"
+            >
+              <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                />
+              </svg>
+              Due Soon
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Notifications -->
+      <section id="notifications" class="mb-16">
+        <h2 class="mb-8 text-4xl font-bold">Notifications & Toasts</h2>
+
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+            <h3 class="mb-6 text-2xl font-bold">Success Toast</h3>
+            <div
+              class="rounded-lg border-2 border-green-500 bg-green-50 p-6 shadow-lg"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-green-500"
+                >
+                  <svg
+                    class="h-5 w-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <p class="mb-1 font-bold text-green-900">Success!</p>
+                  <p class="text-sm text-green-800">
+                    Medication marked as taken.
+                  </p>
+                </div>
+                <button class="text-green-600 hover:text-green-800">
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+            <h3 class="mb-6 text-2xl font-bold">Error Toast</h3>
+            <div
+              class="rounded-lg border-2 border-red-500 bg-red-50 p-6 shadow-lg"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-red-500"
+                >
+                  <svg
+                    class="h-5 w-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <p class="mb-1 font-bold text-red-900">Error</p>
+                  <p class="text-sm text-red-800">
+                    Failed to save medication. Please try again.
+                  </p>
+                </div>
+                <button class="text-red-600 hover:text-red-800">
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+            <h3 class="mb-6 text-2xl font-bold">Warning Toast</h3>
+            <div
+              class="rounded-lg border-2 border-yellow-500 bg-yellow-50 p-6 shadow-lg"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-yellow-500"
+                >
+                  <svg
+                    class="h-5 w-5 text-yellow-900"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                    />
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <p class="mb-1 font-bold text-yellow-900">Warning</p>
+                  <p class="text-sm text-yellow-800">
+                    Medication due in 30 minutes.
+                  </p>
+                </div>
+                <button class="text-yellow-600 hover:text-yellow-800">
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-lg border-2 border-gray-200 bg-white p-8">
+            <h3 class="mb-6 text-2xl font-bold">Info Toast</h3>
+            <div
+              class="rounded-lg border-2 border-blue-500 bg-blue-50 p-6 shadow-lg"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-blue-500"
+                >
+                  <svg
+                    class="h-5 w-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <p class="mb-1 font-bold text-blue-900">Info</p>
+                  <p class="text-sm text-blue-800">
+                    New medication added to schedule.
+                  </p>
+                </div>
+                <button class="text-blue-600 hover:text-blue-800">
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="border-t-2 border-gray-200 pt-8">
+        <div class="text-center text-gray-600">
+          <p class="text-sm">
+            Prescription Clarity Design System - UI Components
+          </p>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

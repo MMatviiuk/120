@@ -1,0 +1,47 @@
+.dateInputWrapper {
+  position: relative;
+  /* Prevent overflow from native date input on iOS Safari */
+  overflow: hidden;
+  min-width: 0;
+}
+
+.dateInput {
+  padding-right: 2.5rem;
+  /* iOS Safari: ensure input respects container width */
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Hide native date picker icon; we render our own calendar SVG.
+   Collapse its box so it doesn't change intrinsic input width (Safari). */
+.dateInputWrapper input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.dateIcon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.dateIconGlyph {
+  width: 1rem;
+  height: 1rem;
+}
+
+@media (min-width: 640px) {
+  .dateInput {
+    padding-right: 3rem;
+  }
+
+  .dateIcon {
+    right: 1rem;
+  }
+}

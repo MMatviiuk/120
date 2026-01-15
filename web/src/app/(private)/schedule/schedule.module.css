@@ -1,0 +1,1449 @@
+.page {
+  min-height: calc(100vh - 4rem);
+  background: #f7f8fa;
+  padding: 0 0 1.5rem;
+}
+
+.content {
+  width: 100%;
+  /*max-width: 1280px;*/
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 0;
+}
+
+.sectionStack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.1),
+    0 1px 2px -1px rgba(15, 23, 42, 0.1);
+  padding: 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.heroInner {
+  /*max-width: 1120px;*/
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.heroTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.heroTopLeft {
+  flex: 1;
+  min-width: 0;
+}
+
+.heroTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  .heroTopRow {
+    width: auto;
+  }
+}
+
+.heroTop h1 {
+  margin: 0.15rem 0 0.25rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.heroTop p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.heroEyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.heroButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  min-height: 3rem;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.heroButtonIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.heroButton span {
+  line-height: 1;
+}
+
+.heroButtonTextFull {
+  display: inline;
+}
+
+.heroButtonTextMobile {
+  display: none;
+}
+
+.filtersButtonTextFull {
+  display: inline;
+}
+
+.heroSecondary {
+  border: 2px solid #e5e7eb;
+  background-color: #ffffff;
+  color: #374151;
+}
+
+.heroSecondary:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+  color: #1f2937;
+}
+
+.heroPrimary {
+  border: none;
+  background-color: #2196f3;
+  color: #ffffff;
+}
+
+.heroPrimary:hover {
+  background-color: #1976d2;
+}
+
+.heroPrimary span {
+  white-space: nowrap;
+}
+
+.filtersToggleButton {
+  min-width: 10rem;
+  height: 3rem;
+  padding-inline: 1.2rem;
+}
+
+.filtersToggleOpen {
+  border-color: #d1d5db;
+  border-width: 2px;
+  background-color: #f0f0f0;
+  color: #374151;
+}
+
+.filtersToggleOpen:hover {
+  border-color: #d1d5db;
+  background-color: #f0f0f0;
+  color: #1f2937;
+}
+
+.filtersToggleActive {
+  border-color: #2196f3;
+  border-width: 2px;
+  background-color: #e0f2fe;
+  color: #0f172a;
+}
+
+.filtersToggleActive:hover {
+  border-color: #1976d2;
+  background-color: #b3e5fc;
+  color: #0f172a;
+}
+
+.searchRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.searchInputWrapper {
+  flex: 1;
+  min-width: 240px;
+}
+
+.searchInputContainer {
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+.searchIconIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.searchInput {
+  width: 100%;
+  height: 3rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 0 1.1rem 0 2.6rem;
+  font-size: 0.95rem;
+  color: #0f172a;
+  background: #ffffff;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.searchMeta {
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.searchInput:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  outline: none;
+}
+
+.filtersBadge {
+  border-radius: 999px;
+  background: #f1f5f9;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.filtersPanel {
+  background: #ffffff;
+  border: 1px solid #e4e7ec;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+.filtersHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filtersHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+
+.filtersTitle {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #475569;
+}
+
+.filtersSubtitle {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #64748b;
+  width: 100%;
+}
+
+.filtersResetButton {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.filtersResetButton:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+  color: #1f2937;
+}
+
+.filtersGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 992px) {
+  .filtersGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.filtersLabel {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 0.4rem;
+}
+
+.filtersSelect,
+.sortButton {
+  width: 100%;
+  height: 44px;
+  border-radius: 0.5rem;
+  border: 1px solid #dfe3eb;
+  background: #ffffff;
+  padding: 0 0.85rem;
+  font-size: 0.9rem;
+  color: #0f172a;
+}
+
+.sortButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-weight: 600;
+}
+
+.sortIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.emptyState {
+  border: 1px dashed #dfe3eb;
+  border-radius: 1.25rem;
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #ffffff;
+}
+
+.emptyStateTitle {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.emptyStateText {
+  margin: 0.35rem 0 0;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.scheduleCompactGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 1024px) {
+  .scheduleCompactGrid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+
+.scheduleCompactCard {
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  padding: 1rem 1rem 0.75rem;
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 1px 3px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.compactHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.compactHeaderLeft {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.compactIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 0.5rem;
+  background-color: oklab(65.8156% -0.0610627 -0.157539 / 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+}
+
+.compactIconGlyph {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.compactTitle {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.compactDose {
+  margin: 0.15rem 0 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #3b82f6;
+}
+
+.compactTimeRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.compactTimeIcon {
+  width: 1rem;
+  height: 1rem;
+  color: #94a3b8;
+}
+
+.compactTimeList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.compactTimeChip {
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #0f172a;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.15rem 0.55rem;
+}
+
+.compactBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge {
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
+  padding: 0.2rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.badgePositive {
+  background: #dcfce7;
+  border-color: #bbf7d0;
+  color: #166534;
+}
+
+.badgeNeutral {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.badgeOutline {
+  background: #ffffff;
+  color: #475569;
+}
+
+.compactDivider {
+  height: 1px;
+  background: #e2e8f0;
+  margin-top: 0.5rem;
+}
+
+.compactFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+}
+
+.compactEditButton {
+  font-size: 0.85rem !important;
+  padding: 0.5rem 1rem !important;
+  height: 44px !important;
+  min-height: 44px !important;
+}
+
+.compactCalendarButton {
+  font-size: 0.85rem !important;
+  padding: 0.5rem 1rem !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  border-color: #2563eb !important;
+  color: #2563eb !important;
+}
+
+.compactCalendarButton:hover {
+  background-color: #eff6ff !important;
+  border-color: #3b82f6 !important;
+  color: #1d4ed8 !important;
+}
+
+.scheduleCard {
+  border: 1px solid #e4e7ec;
+  border-radius: 1.25rem;
+  background: #ffffff;
+  padding: 1.5rem;
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+.scheduleHeader {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.scheduleTitle h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.scheduleTitle p {
+  margin: 0.2rem 0 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.statusBadge {
+  align-self: flex-start;
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.statusActive {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.statusCompleted {
+  background: #f8fafc;
+  color: #475569;
+}
+
+.detailsGrid {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .detailsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.detailsLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.detailsValue {
+  margin-top: 0.2rem;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.actionsRow {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.secondaryButton,
+.plainButton {
+  border-radius: 0.9rem;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.secondaryButton {
+  border: 1px solid #dfe3eb;
+  background: #ffffff;
+  color: #1f2937;
+}
+
+.plainButton {
+  border: 1px solid transparent;
+  color: #2563eb;
+  background: #f6faff;
+}
+
+.dialogOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 50;
+}
+
+.dialogPanel {
+  width: min(640px, 100%);
+  background: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.35),
+    0 8px 18px rgba(15, 23, 42, 0.25);
+  display: flex;
+  flex-direction: column;
+}
+
+.dialogHeader {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e4e7ec;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.dialogTitleLabel {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #94a3b8;
+}
+
+.dialogTitle {
+  margin: 0.15rem 0 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.dialogTitleMeta {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.dialogCloseButton {
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  border-radius: 0.5rem;
+  padding: 0.35rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+  align-self: flex-start;
+}
+
+.dialogCloseButton:hover {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.dialogBody {
+  padding: 1.5rem;
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
+.formGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .formGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.formLabel {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.dialogFooter {
+  padding: 1rem 1.5rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.dialogFooterRight {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.dialogDeleteButton {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  color: #dc2626;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.55rem 1.2rem;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.dialogDeleteButton:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+}
+
+.dialogDeleteButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.formSection {
+  margin-top: 1.5rem;
+}
+
+.formSectionTitle {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.formSectionHint {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.dateInputWrapper {
+  position: relative;
+  /* Prevent overflow from native date input on iOS Safari */
+  overflow: hidden;
+  min-width: 0;
+}
+
+.dateInput {
+  padding-right: 2.5rem;
+  /* iOS Safari: ensure input respects container width */
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Hide native date picker icon in the edit schedule dialog;
+   we render a custom calendar SVG instead.
+   Collapse its box so it doesn't change intrinsic input width (Safari). */
+.dateInputWrapper input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.dateIcon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.dateIconGlyph {
+  width: 1rem;
+  height: 1rem;
+}
+
+@media (min-width: 640px) {
+  .dateInput {
+    padding-right: 3rem;
+  }
+
+  .dateIcon {
+    right: 1rem;
+  }
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #dfe3eb;
+  border-radius: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.9rem;
+  color: #0f172a;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+/* Normalize select height to match text inputs in the edit schedule dialog */
+select.input {
+  height: 2.5rem;
+  padding: 0.55rem 0.9rem;
+  line-height: 1.25;
+  border-radius: 0.5rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #ffffff;
+}
+
+.selectWrapper {
+  position: relative;
+}
+
+.selectInput {
+  padding-right: 2.5rem;
+}
+
+.selectChevron {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.selectChevronGlyph {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.weekdayGrid {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.weekdayButton {
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #475569;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.35rem 0.9rem;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.weekdayButtonActive {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+}
+
+.timeList {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.checkboxRow {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid #e4e7ec;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+}
+
+.checkboxInput {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #cbd5f5;
+  border-radius: 0.25rem;
+}
+
+.timeRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.removeButton {
+  border: 1px solid #e4e7ec;
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  color: #64748b;
+  background: #ffffff;
+}
+
+.addTimeButton {
+  margin-top: 0.5rem;
+  border: none;
+  background: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.errorMessage {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #dc2626;
+}
+
+.dialogCancelButton {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #475569;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.55rem 1.2rem;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.dialogCancelButton:hover {
+  background: #f8fafc;
+  border-color: #cbd5f5;
+}
+
+.dialogSaveButton {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.55rem 1.5rem;
+  box-shadow: 0 10px 15px rgba(37, 99, 235, 0.25);
+}
+
+.saveButtonTextFull {
+  display: inline;
+}
+
+.saveButtonTextMobile {
+  display: none;
+}
+
+.dialogSaveButton:hover {
+  background: #1d4ed8;
+}
+
+.dialogSaveButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Delete confirmation dialog */
+.confirmOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  z-index: 60;
+}
+
+.confirmPanel {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  max-width: 400px;
+  width: 100%;
+  box-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.35),
+    0 8px 18px rgba(15, 23, 42, 0.25);
+}
+
+.confirmTitle {
+  margin: 0 0 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.confirmText {
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.confirmActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.confirmDeleteButton {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: none;
+  background: #dc2626;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.55rem 1.2rem;
+  transition: background-color 0.2s ease;
+}
+
+.confirmDeleteButton:hover {
+  background: #b91c1c;
+}
+
+.confirmDeleteButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .heroTopLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .heroTopRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .heroTop h1 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .heroTop p {
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .heroActions {
+    flex-shrink: 0;
+  }
+
+  .heroButton {
+    padding: 0.4rem 0.6rem;
+    min-height: 2rem;
+    font-size: 0.8rem;
+  }
+
+  .heroButtonTextFull {
+    display: none;
+  }
+
+  .heroButtonTextMobile {
+    display: inline;
+  }
+
+  .searchRow {
+    margin-top: 0;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+  }
+
+  .searchMeta {
+    font-size: 0.7rem;
+    margin-top: 0.2rem;
+  }
+
+  .searchInputWrapper {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .searchInput {
+    height: 2.5rem;
+    font-size: 0.85rem;
+    padding: 0 0.9rem 0 2.4rem;
+  }
+
+  .searchIcon {
+    left: 0.75rem;
+  }
+
+  .searchIconIcon {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+
+  .filtersToggleButton {
+    min-width: auto;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding-inline: 0;
+    flex-shrink: 0;
+  }
+
+  .heroButtonIcon {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+
+  .filtersButtonTextFull {
+    display: none;
+  }
+
+  .heroInner {
+    gap: 0.75rem;
+  }
+
+  .hero {
+    padding: 0.5rem 1rem;
+  }
+
+  .scheduleCompactGrid {
+    gap: 0.75rem;
+  }
+
+  .scheduleCompactCard {
+    padding: 0.75rem 0.75rem 0.5rem;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  .compactHeader {
+    gap: 0.5rem;
+  }
+
+  .compactHeaderLeft {
+    gap: 0.5rem;
+  }
+
+  .compactIcon {
+    width: 48px;
+    height: 48px;
+    border-radius: 0.375rem;
+  }
+
+  .compactIconGlyph {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .compactTitle {
+    font-size: 0.9rem;
+  }
+
+  .compactDose {
+    margin-top: 0.1rem;
+    font-size: 0.85rem;
+  }
+
+  .compactTimeRow {
+    gap: 0.375rem;
+  }
+
+  .compactTimeIcon {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  .compactTimeList {
+    gap: 0.25rem;
+  }
+
+  .compactTimeChip {
+    font-size: 0.75rem;
+    padding: 0.1rem 0.45rem;
+  }
+
+  .compactBadges {
+    gap: 0.375rem;
+  }
+
+  .badge {
+    padding: 0.15rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .compactDivider {
+    margin-top: 0.375rem;
+  }
+
+  .compactFooter {
+    padding-top: 0.375rem;
+  }
+
+  .compactEditButton {
+    font-size: 0.8rem !important;
+    padding: 0.4rem 0.75rem !important;
+    height: 36px !important;
+    min-height: 36px !important;
+  }
+
+  .compactCalendarButton {
+    font-size: 0.8rem !important;
+    padding: 0.4rem 0.75rem !important;
+    height: 36px !important;
+    min-height: 36px !important;
+  }
+
+  .content {
+    padding: 0.5rem 1rem 0;
+  }
+
+  .filtersPanel {
+    padding: 1rem;
+    border-radius: 0.375rem;
+  }
+
+  .filtersHeader {
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .filtersHeaderRow {
+    gap: 0.75rem;
+  }
+
+  .filtersTitle {
+    font-size: 0.75rem;
+  }
+
+  .filtersSubtitle {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .filtersResetButton {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.6rem;
+  }
+
+  .filtersGrid {
+    gap: 0.75rem;
+  }
+
+  .filtersLabel {
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .filtersSelect,
+  .sortButton {
+    height: 36px;
+    padding: 0 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .sortIcon {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  .dialogOverlay {
+    padding: 0.5rem;
+    align-items: flex-start;
+    padding-top: 3.5rem;
+  }
+
+  .dialogPanel {
+    border-radius: 0.5rem;
+    max-height: calc(100vh - 5rem);
+    width: 100%;
+  }
+
+  .dialogHeader {
+    padding: 0.75rem 1rem;
+    align-items: flex-start;
+  }
+
+  .dialogTitleLabel {
+    font-size: 0.7rem;
+    margin: 0;
+  }
+
+  .dialogTitle {
+    margin-top: 0.1rem;
+    font-size: 1.1rem;
+  }
+
+  .dialogTitleMeta {
+    margin-top: 0.15rem;
+    font-size: 0.85rem;
+  }
+
+  .dialogCloseButton {
+    padding: 0;
+    font-size: 1.25rem;
+    margin: 0;
+    align-self: flex-start;
+    line-height: 1;
+    height: auto;
+    margin-top: -0.25rem;
+  }
+
+  .dialogBody {
+    padding: 1rem;
+    max-height: calc(100vh - 18rem);
+    overflow-y: auto;
+  }
+
+  .formGrid {
+    gap: 0.75rem;
+  }
+
+  .formLabel {
+    font-size: 0.85rem;
+  }
+
+  .input {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .dateInput {
+    padding-right: 2.5rem;
+  }
+
+  .formSection {
+    margin-top: 1rem;
+  }
+
+  .formSectionTitle {
+    font-size: 0.85rem;
+  }
+
+  .dialogFooter {
+    padding: 0.75rem 1rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .dialogDeleteButton {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .dialogCancelButton {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .dialogSaveButton {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .saveButtonTextFull {
+    display: none;
+  }
+
+  .saveButtonTextMobile {
+    display: inline;
+  }
+}

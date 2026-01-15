@@ -1,0 +1,95 @@
+import { z } from "zod";
+
+export const generateScheduleSchema = z
+  .object({
+    medicationId: z.string().min(1, "medicationId is required").optional(),
+    scheduleId: z.string().min(1, "scheduleId is required").optional(),
+  })
+  .refine((data) => data.medicationId || data.scheduleId, {
+    message: "Either medicationId or scheduleId must be provided",
+  });
+
+export const scheduleQuerySchema = z.object({
+  from: z.string().datetime(),
+  to: z.string().datetime(),
+  tz: z.string().optional(), // IANA timezone name (e.g., Europe/Kyiv)
+});
+
+export const updateScheduleStatusSchema = z.object({
+  status: z.enum(["PLANNED", "DONE"]),
+});
+
+export const createScheduleSchema = z.object({
+  medicationId: z.string().min(1, "medicationId is required"),
+  // Allow fractional quantities like 0.5 tablets
+  quantity: z.coerce.number().positive().max(1000).default(1),
+  units: z.string().min(1).max(50).default("pill"),
+  frequencyDays: z
+    .array(z.number().int().min(1).max(7))
+    .min(1, "At least one day must be selected"),
+  durationDays: z.coerce.number().int().min(0).max(365),
+  dateStart: z
+    .string()
+    .regex(/^\d{4}-\d{2}-\d{2}$/, "dateStart must be in YYYY-MM-DD format"),
+  timeOfDay: z
+    .array(
+      z
+        .string()
+        .regex(
+          /^([0-1][0-9]|2[0-3]):[0-5][0-9]$/,
+          "timeOfDay must be in HH:MM format",
+        ),
+    )
+    .min(1, "At least one time must be specified"),
+  mealTiming: z.enum(["before", "with", "after", "anytime"]).default("anytime"),
+});
+
+export const updateScheduleSchema = z
+  .object({
+    // Allow updating to fractional quantities
+    quantity: z.coerce.number().positive().max(1000).optional(),
+    units: z.string().min(1).max(50).optional(),
+    frequencyDays: z
+      .array(z.number().int().min(1).max(7))
+      .min(1, "At least one day must be selected")
+      .optional(),
+    durationDays: z.coerce.number().int().min(0).max(365).optional(),
+    dateStart: z
+      .string()
+      .regex(/^\d{4}-\d{2}-\d{2}$/, "dateStart must be in YYYY-MM-DD format")
+      .optional(),
+    timeOfDay: z
+      .array(
+        z
+          .string()
+          .regex(
+            /^([0-1][0-9]|2[0-3]):[0-5][0-9]$/,
+            "timeOfDay must be in HH:MM format",
+          ),
+      )
+      .min(1, "At least one time must be specified")
+      .optional(),
+    mealTiming: z.enum(["before", "with", "after", "anytime"]).optional(),
+    regenerateEntries: z.boolean().optional(),
+  })
+  .refine(
+    (value) =>
+      value.quantity !== undefined ||
+      value.units !== undefined ||
+      value.frequencyDays !== undefined ||
+      value.durationDays !== undefined ||
+      value.dateStart !== undefined ||
+      value.timeOfDay !== undefined ||
+      value.mealTiming !== undefined,
+    {
+      message: "At least one field must be provided for update",
+    },
+  );
+
+export type GenerateScheduleInput = z.infer<typeof generateScheduleSchema>;
+export type ScheduleQueryInput = z.infer<typeof scheduleQuerySchema>;
+export type UpdateScheduleStatusInput = z.infer<
+  typeof updateScheduleStatusSchema
+>;
+export type CreateScheduleInput = z.infer<typeof createScheduleSchema>;
+export type UpdateScheduleInput = z.infer<typeof updateScheduleSchema>;

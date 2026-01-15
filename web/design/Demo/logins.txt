@@ -1,0 +1,18 @@
+Пацієнт
+	Ім’я: Margaret Maxwell
+	Роль: пацієнт, основний користувач додатку
+	Email: margaret.maxwell.demo@gmail.com
+	Password: Margaret123
+
+
+Син     опікун / також пацієнт
+	Ім’я: James Maxwell
+	Роль: син, опікун, має власні ліки та доступ до профілю матері
+	Email: james.maxwell.demo@gmail.com
+	Password: James123
+
+Донька  другий опікун
+	Ім’я: Olivia Brown
+	Роль: донька, має доступ як другий опікун до початку демо; у відео показуємо тільки факт відкликання доступу, без запису її екрану
+	Email: olivia.brown.demo@yahoo.co.uk
+	Password: Olivia123

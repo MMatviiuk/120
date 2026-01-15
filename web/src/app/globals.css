@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  font-size: 1rem;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  font-feature-settings: "liga", "kern";
+}
+
+html {
+  font-size: 20px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 1.2s ease-out;
+}
+
+/* Date input sizing for mobile (including Safari iOS) */
+input[type="date"],
+input[type="time"] {
+  /* Prevent mobile browsers from making the control wider than its container */
+  width: 100%;
+  max-width: 100%;
+  min-width: 0; /* Allow shrinking in flex/grid containers */
+  box-sizing: border-box;
+  display: block;
+  /* iOS Safari: reset appearance to prevent intrinsic min-width */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Clip any overflow from native controls */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* iOS Safari specific: prevent date input from expanding */
+@supports (-webkit-touch-callout: none) {
+  input[type="date"],
+  input[type="time"] {
+    /* Force the input to respect container width on iOS */
+    min-width: 0 !important;
+  }
+}
+
+/* Hide the native picker icon only for custom-decorated fields like DOB.
+   We also collapse its width so it doesn't force the control to overflow. */
+input#dateOfBirth::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Time of day cards: 2 columns on tablet (641px-1024px), 3 columns on desktop (1025px+) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  /* Make Custom button span full width on tablet */
+  .time-of-day-grid > .custom-time-button {
+    grid-column: 1 / -1;
+  }
+}
